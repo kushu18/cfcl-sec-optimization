@@ -334,9 +334,8 @@ The software and control logic implement the following international engineering
 
 ---
 
-### Engineering Sign-Off
+## Author
 
-* **Lead Intern / Automation Engineer**: Kushagra Bhatt (Process Analytics & Advanced Control)
-* **Reviewed By**: Shift In-Charge (SIC), Urea Complex Operations Desk
-* **Approved By**: Vice President (Operations), Chambal Fertilisers and Chemicals Limited
-* **Facility**: Gadepan Complex, District Kota, Rajasthan – 325 208, India
+**Kushagra Bhatt**
+- GitHub: [@kushu18](https://github.com/kushu18)
+- Email: kushagrabhatt2004@gmail.com
