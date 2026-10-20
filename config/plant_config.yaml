@@ -1,0 +1,196 @@
+# CFCL Gadepan Plant Configuration
+# Calibrated against publicly available CFCL Annual Report, BRSR disclosures,
+# and standard Indian gas-based urea plant operating parameters.
+
+plants:
+  gadepan_1:
+    name: "Gadepan-I"
+    capacity_mtpd: 1520  # Nameplate urea capacity
+    commissioned: 1993
+    technology:
+      reformer: "Top-fired primary reformer"
+      co2_removal: "MEA (Monoethanolamine)"
+      synthesis: "Saipem snamprogetti"
+    sec_range:
+      min: 5.08
+      max: 5.25
+      benchmark: 5.10  # Best achievable
+      unit: "Gcal/MT urea"
+    turnaround:
+      typical_months: [4, 5]  # April-May
+      duration_days: 25
+    catalyst:
+      fresh_age_days: 0
+      typical_age_range: [0, 90]  # Recent turnaround
+    co2_slip:
+      range: [800, 2000]
+      unit: "ppm"
+
+  gadepan_2:
+    name: "Gadepan-II"
+    capacity_mtpd: 1520
+    commissioned: 1999
+    technology:
+      reformer: "Top-fired primary reformer"
+      co2_removal: "Benfield (Hot potassium carbonate)"
+      synthesis: "Saipem snamprogetti"
+    sec_range:
+      min: 5.05
+      max: 5.22
+      benchmark: 5.07
+      unit: "Gcal/MT urea"
+    turnaround:
+      typical_months: [5, 6]  # May-June
+      duration_days: 25
+    catalyst:
+      fresh_age_days: 0
+      typical_age_range: [0, 90]
+    co2_slip:
+      range: [600, 1500]
+      unit: "ppm"
+
+  gadepan_3:
+    name: "Gadepan-III"
+    capacity_mtpd: 2350  # Largest, newest
+    commissioned: 2019
+    technology:
+      reformer: "Side-fired primary reformer"
+      co2_removal: "aMDEA (Activated Methyl Diethanolamine)"
+      synthesis: "Saipem snamprogetti"
+    sec_range:
+      min: 4.88
+      max: 4.97
+      benchmark: 4.90
+      unit: "Gcal/MT urea"
+    turnaround:
+      typical_months: [3, 4]  # March-April (different from G-I/II)
+      duration_days: 20
+    catalyst:
+      fresh_age_days: 0
+      typical_age_range: [0, 2300]  # Older catalyst, longer run
+    co2_slip:
+      range: [200, 600]
+      unit: "ppm"
+
+# Process variable safety bounds (applicable to all plants unless overridden)
+process_variables:
+  steam_carbon_ratio:
+    display_name: "Steam-to-Carbon Ratio"
+    unit: "mol/mol"
+    safety_min: 2.8
+    safety_max: 3.4
+    optimal_range: [3.0, 3.2]
+    controllable: true
+    description: "Primary reformer steam injection ratio. Below 2.8 risks carbon deposition."
+
+  loop_pressure:
+    display_name: "Synthesis Loop Pressure"
+    unit: "kg/cm²"
+    safety_min: 145
+    safety_max: 185
+    optimal_range: [155, 170]
+    controllable: true
+    description: "Urea synthesis reactor operating pressure."
+
+  reformer_outlet_temp:
+    display_name: "Reformer Outlet Temperature"
+    unit: "°C"
+    safety_min: 780
+    safety_max: 830
+    optimal_range: [800, 815]
+    controllable: true
+    description: "Primary reformer exit gas temperature. Upper limit by tube metallurgy."
+
+  cw_inlet_temp:
+    display_name: "Cooling Water Inlet Temperature"
+    unit: "°C"
+    safety_min: 24
+    safety_max: 40
+    optimal_range: [28, 32]
+    controllable: false
+    description: "Cooling tower return water temperature. Driven by ambient conditions and Kalisindh river water."
+
+  ambient_temp:
+    display_name: "Ambient Temperature"
+    unit: "°C"
+    safety_min: 15
+    safety_max: 48
+    monthly_ranges:
+      july: [30, 42]
+      august: [28, 38]
+      september: [27, 36]
+      october: [25, 35]
+      november: [18, 30]
+      december: [12, 25]
+    controllable: false
+    description: "Kota ambient dry-bulb temperature from IMD data."
+
+  ambient_humidity:
+    display_name: "Ambient Relative Humidity"
+    unit: "%"
+    safety_min: 10
+    safety_max: 100
+    monthly_ranges:
+      july: [55, 85]
+      august: [60, 92]
+      september: [50, 80]
+      october: [35, 60]
+      november: [25, 50]
+      december: [20, 45]
+    controllable: false
+    description: "Monsoon-driven humidity. Directly impacts CW tower performance and SEC."
+
+  co2_slip_ppm:
+    display_name: "CO₂ Slip"
+    unit: "ppm"
+    safety_min: 50
+    safety_max: 2500
+    controllable: false  # Technology-dependent
+    description: "CO₂ breakthrough from absorption column. Depends on solvent type and condition."
+
+  ng_calorific_value:
+    display_name: "Natural Gas Calorific Value"
+    unit: "kcal/SCM"
+    safety_min: 8400
+    safety_max: 9200
+    typical_range: [8600, 9000]
+    controllable: false
+    description: "HBJ pipeline gas heating value. Varies with upstream gas blend composition."
+
+  catalyst_age_days:
+    display_name: "Catalyst Age"
+    unit: "days"
+    safety_min: 0
+    safety_max: 2500
+    controllable: false
+    description: "Days since last catalyst replacement during turnaround. Affects reformer efficiency."
+
+# Shift definitions
+shifts:
+  morning:
+    name: "Morning (A-shift)"
+    start_hour: 6
+    end_hour: 14
+  afternoon:
+    name: "Afternoon (B-shift)"
+    start_hour: 14
+    end_hour: 22
+  night:
+    name: "Night (C-shift)"
+    start_hour: 22
+    end_hour: 6
+
+# SEC output variable
+sec:
+  display_name: "Specific Energy Consumption"
+  unit: "Gcal/MT urea"
+  description: "Total energy consumed per metric ton of urea produced."
+  industry_benchmark: 5.0
+  national_average: 5.5
+
+# Data generation parameters
+data_generation:
+  duration_months: 6
+  start_date: "2026-01-01"
+  frequency: "1H"  # Hourly DCS snapshots
+  anomaly_count: 3  # Instrument-air compressor trip events per plant

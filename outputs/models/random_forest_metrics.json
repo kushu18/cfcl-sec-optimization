@@ -1,0 +1,57 @@
+{
+  "metrics": {
+    "train_r2": 0.9629,
+    "train_mae": 0.0147,
+    "train_rmse": 0.0204,
+    "train_mape": 0.2904
+  },
+  "cv_results": [
+    {
+      "fold": 1,
+      "r2": 0.6984,
+      "mae": 0.0396,
+      "rmse": 0.0546,
+      "mape": 0.7793
+    },
+    {
+      "fold": 2,
+      "r2": 0.8457,
+      "mae": 0.027,
+      "rmse": 0.0343,
+      "mape": 0.5318
+    },
+    {
+      "fold": 3,
+      "r2": 0.8939,
+      "mae": 0.0267,
+      "rmse": 0.0387,
+      "mape": 0.5267
+    },
+    {
+      "fold": 4,
+      "r2": 0.8596,
+      "mae": 0.0297,
+      "rmse": 0.0409,
+      "mape": 0.5828
+    },
+    {
+      "fold": 5,
+      "r2": 0.8982,
+      "mae": 0.0235,
+      "rmse": 0.0321,
+      "mape": 0.4609
+    }
+  ],
+  "top_10_features": {
+    "co2_slip_ppm_ewma_24h": 0.07348,
+    "sec_lag_24h": 0.05919,
+    "co2_slip_ppm_rolling_mean_24h": 0.05795,
+    "sec_lag_3h": 0.05444,
+    "sec_lag_1h": 0.05232,
+    "co2_slip_ppm_rolling_mean_12h": 0.05193,
+    "plant_gadepan_3": 0.04952,
+    "sec_vs_fleet_mean": 0.04128,
+    "co2_slip_ppm_ewma_12h": 0.03928,
+    "co2_slip_ppm": 0.03887
+  }
+}

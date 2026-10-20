@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  cfcl-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cfcl-sec-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    networks:
+      - cfcl-network
+
+  cfcl-dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cfcl-sec-dashboard
+    restart: unless-stopped
+    command: ["streamlit", "run", "dashboard/app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+    ports:
+      - "8501:8501"
+    environment:
+      - API_URL=http://cfcl-api:8000
+    depends_on:
+      cfcl-api:
+        condition: service_healthy
+    networks:
+      - cfcl-network
+
+networks:
+  cfcl-network:
+    driver: bridge

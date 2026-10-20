@@ -1,0 +1,261 @@
+/* =============================================================================
+   CFCL GADEPAN — Specific Energy Consumption (SEC) Optimization Engine
+   ISA-101 High-Performance HMI Industrial Control Room Theme
+   ============================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #0B0F17;
+  --bg-card: #131B26;
+  --bg-card-hover: #1A2433;
+  --bg-sidebar: #090D14;
+  --border-color: #223042;
+  --border-accent: #2A3C52;
+  
+  --cfcl-blue: #0284C7;
+  --cfcl-blue-glow: rgba(2, 132, 199, 0.25);
+  --cfcl-navy: #0369A1;
+  --cfcl-cyan: #38BDF8;
+  
+  --status-nominal: #10B981;
+  --status-nominal-bg: rgba(16, 185, 129, 0.12);
+  --status-warning: #F59E0B;
+  --status-warning-bg: rgba(245, 158, 11, 0.12);
+  --status-trip: #EF4444;
+  --status-trip-bg: rgba(239, 68, 68, 0.15);
+  
+  --text-main: #F1F5F9;
+  --text-muted: #94A3B8;
+  --text-dim: #64748B;
+  --font-mono: 'JetBrains Mono', 'Roboto Mono', monospace;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Base Body Styling */
+body, .stApp {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+}
+
+/* Sidebar Customization */
+section[data-testid="stSidebar"] {
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border-color);
+}
+
+section[data-testid="stSidebar"] .stMarkdown h1, 
+section[data-testid="stSidebar"] .stMarkdown h2, 
+section[data-testid="stSidebar"] .stMarkdown h3 {
+  color: var(--cfcl-cyan);
+  font-family: var(--font-sans);
+  letter-spacing: -0.02em;
+}
+
+/* Metric KPI Containers */
+[data-testid="stMetric"] {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 14px 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  transition: all 0.2s ease-in-out;
+}
+
+[data-testid="stMetric"]:hover {
+  background-color: var(--bg-card-hover);
+  border-color: var(--cfcl-blue);
+  box-shadow: 0 6px 16px var(--cfcl-blue-glow);
+}
+
+[data-testid="stMetricLabel"] {
+  font-family: var(--font-mono);
+  font-size: 0.78rem !important;
+  color: var(--text-muted) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+[data-testid="stMetricValue"] {
+  font-family: var(--font-mono);
+  font-size: 1.65rem !important;
+  font-weight: 700;
+  color: var(--text-main) !important;
+}
+
+[data-testid="stMetricDelta"] {
+  font-family: var(--font-mono);
+  font-size: 0.85rem !important;
+}
+
+/* DCS Header Banner */
+.dcs-header {
+  background: linear-gradient(135deg, #0C1E36 0%, #11294D 100%);
+  border: 1px solid var(--cfcl-blue);
+  border-left: 5px solid var(--cfcl-cyan);
+  border-radius: 8px;
+  padding: 16px 22px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(2, 132, 199, 0.15);
+}
+
+.dcs-header h1 {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.01em;
+}
+
+.dcs-header p {
+  color: var(--cfcl-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+/* ISA-18.2 Priority 1 Flashing Alarm Banner */
+@keyframes alarm-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6); }
+  70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.alarm-banner-p1 {
+  background-color: var(--status-trip-bg);
+  border: 1px solid var(--status-trip);
+  border-left: 6px solid var(--status-trip);
+  border-radius: 6px;
+  padding: 12px 18px;
+  color: #FCA5A5;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+  animation: alarm-pulse 2s infinite;
+}
+
+.alarm-banner-nominal {
+  background-color: var(--status-nominal-bg);
+  border: 1px solid var(--status-nominal);
+  border-left: 6px solid var(--status-nominal);
+  border-radius: 6px;
+  padding: 10px 16px;
+  color: #6EE7B7;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  margin-bottom: 16px;
+}
+
+/* Faceplate Card */
+.faceplate-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+.faceplate-title {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--cfcl-cyan);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* Monospace DCS Tag Badges */
+.dcs-tag {
+  background-color: #1E293B;
+  color: #E2E8F0;
+  border: 1px solid #334155;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* Unit Badge */
+.unit-badge-g1 {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #F87171;
+  border: 1px solid #EF4444;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.unit-badge-g2 {
+  background-color: rgba(56, 189, 248, 0.15);
+  color: #38BDF8;
+  border: 1px solid #0284C7;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.unit-badge-g3 {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #34D399;
+  border: 1px solid #10B981;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* Buttons */
+.stButton > button {
+  background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%) !important;
+  color: #FFFFFF !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  border: 1px solid #38BDF8 !important;
+  border-radius: 6px !important;
+  padding: 8px 18px !important;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3) !important;
+  transition: all 0.2s ease !important;
+}
+
+.stButton > button:hover {
+  background: linear-gradient(135deg, #0369A1 0%, #075985 100%) !important;
+  box-shadow: 0 6px 18px rgba(56, 189, 248, 0.4) !important;
+  transform: translateY(-1px);
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+  gap: 8px;
+  background-color: var(--bg-sidebar);
+  border-bottom: 1px solid var(--border-color);
+  padding: 6px 8px 0 8px;
+  border-radius: 8px 8px 0 0;
+}
+
+.stTabs [data-baseweb="tab"] {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-radius: 6px 6px 0 0;
+  padding: 10px 18px;
+}
+
+.stTabs [aria-selected="true"] {
+  color: #FFFFFF !important;
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  border-bottom: 2px solid var(--cfcl-cyan) !important;
+  font-weight: 700 !important;
+}

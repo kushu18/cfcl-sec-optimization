@@ -1,0 +1,117 @@
+{
+  "model_analyzed": "xgboost",
+  "sample_records": 600,
+  "base_value_sec_gcal_per_mt": 5.0514,
+  "top_features": [
+    {
+      "rank": 1,
+      "feature": "plant_gadepan_3",
+      "mean_abs_shap": 0.04565,
+      "directional_correlation": -0.996,
+      "interpretation": "Higher values reduce energy consumption (favorable)"
+    },
+    {
+      "rank": 2,
+      "feature": "sec_lag_1h",
+      "mean_abs_shap": 0.02136,
+      "directional_correlation": 0.9177,
+      "interpretation": "Higher values increase energy consumption (undesirable)"
+    },
+    {
+      "rank": 3,
+      "feature": "shift_night",
+      "mean_abs_shap": 0.0087,
+      "directional_correlation": 0.9608,
+      "interpretation": "Higher values increase energy consumption (undesirable)"
+    },
+    {
+      "rank": 4,
+      "feature": "sec_lag_24h",
+      "mean_abs_shap": 0.00861,
+      "directional_correlation": 0.728,
+      "interpretation": "Higher values increase energy consumption (undesirable)"
+    },
+    {
+      "rank": 5,
+      "feature": "outlier_count",
+      "mean_abs_shap": 0.00618,
+      "directional_correlation": 0.7579,
+      "interpretation": "Higher values increase energy consumption (undesirable)"
+    },
+    {
+      "rank": 6,
+      "feature": "cw_inlet_temp",
+      "mean_abs_shap": 0.00535,
+      "directional_correlation": 0.8897,
+      "interpretation": "Higher values increase energy consumption (undesirable)"
+    },
+    {
+      "rank": 7,
+      "feature": "co2_slip_ppm_rolling_mean_6h",
+      "mean_abs_shap": 0.00486,
+      "directional_correlation": 0.8517,
+      "interpretation": "Higher values increase energy consumption (undesirable)"
+    },
+    {
+      "rank": 8,
+      "feature": "co2_slip_ppm_rolling_mean_3h",
+      "mean_abs_shap": 0.00272,
+      "directional_correlation": 0.865,
+      "interpretation": "Higher values increase energy consumption (undesirable)"
+    },
+    {
+      "rank": 9,
+      "feature": "ambient_cw_interaction",
+      "mean_abs_shap": 0.00241,
+      "directional_correlation": 0.8215,
+      "interpretation": "Higher values increase energy consumption (undesirable)"
+    },
+    {
+      "rank": 10,
+      "feature": "steam_pressure_interaction",
+      "mean_abs_shap": 0.00236,
+      "directional_correlation": 0.9496,
+      "interpretation": "Higher values increase energy consumption (undesirable)"
+    },
+    {
+      "rank": 11,
+      "feature": "is_night_shift",
+      "mean_abs_shap": 0.00228,
+      "directional_correlation": 0.962,
+      "interpretation": "Higher values increase energy consumption (undesirable)"
+    },
+    {
+      "rank": 12,
+      "feature": "hour_sin",
+      "mean_abs_shap": 0.00217,
+      "directional_correlation": -0.317,
+      "interpretation": "Higher values reduce energy consumption (favorable)"
+    },
+    {
+      "rank": 13,
+      "feature": "co2_slip_ppm_ewma_24h",
+      "mean_abs_shap": 0.00162,
+      "directional_correlation": 0.9055,
+      "interpretation": "Higher values increase energy consumption (undesirable)"
+    },
+    {
+      "rank": 14,
+      "feature": "co2_efficiency",
+      "mean_abs_shap": 0.00139,
+      "directional_correlation": 0.9036,
+      "interpretation": "Higher values increase energy consumption (undesirable)"
+    },
+    {
+      "rank": 15,
+      "feature": "ng_calorific_value",
+      "mean_abs_shap": 0.00124,
+      "directional_correlation": -0.9109,
+      "interpretation": "Higher values reduce energy consumption (favorable)"
+    }
+  ],
+  "worst_hour_excursion": {
+    "timestamp": "2026-06-25 23:00:00",
+    "plant_id": "gadepan_1",
+    "peak_sec": 5.2943
+  }
+}

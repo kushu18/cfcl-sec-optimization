@@ -1,0 +1,284 @@
+{
+  "raw_records": 11352,
+  "raw_columns": [
+    "timestamp",
+    "plant_id",
+    "steam_carbon_ratio",
+    "loop_pressure",
+    "reformer_outlet_temp",
+    "cw_inlet_temp",
+    "ambient_temp",
+    "ambient_humidity",
+    "co2_slip_ppm",
+    "ng_calorific_value",
+    "catalyst_age_days",
+    "shift",
+    "sec_gcal_per_mt"
+  ],
+  "clipped_values": {
+    "steam_carbon_ratio": 0,
+    "loop_pressure": 0,
+    "reformer_outlet_temp": 0,
+    "cw_inlet_temp": 0,
+    "ambient_temp": 0,
+    "ambient_humidity": 0,
+    "co2_slip_ppm": 0,
+    "ng_calorific_value": 0,
+    "catalyst_age_days": 0,
+    "sec_gcal_per_mt": 0
+  },
+  "outlier_detection": {
+    "total_outlier_rows": 1097,
+    "outlier_pct": 9.663,
+    "per_feature": {
+      "steam_carbon_ratio": {
+        "iqr": 67,
+        "z_score": 2,
+        "combined": 67
+      },
+      "loop_pressure": {
+        "iqr": 52,
+        "z_score": 1,
+        "combined": 52
+      },
+      "reformer_outlet_temp": {
+        "iqr": 47,
+        "z_score": 1,
+        "combined": 47
+      },
+      "cw_inlet_temp": {
+        "iqr": 0,
+        "z_score": 0,
+        "combined": 0
+      },
+      "ambient_temp": {
+        "iqr": 0,
+        "z_score": 0,
+        "combined": 0
+      },
+      "ambient_humidity": {
+        "iqr": 89,
+        "z_score": 4,
+        "combined": 89
+      },
+      "co2_slip_ppm": {
+        "iqr": 65,
+        "z_score": 4,
+        "combined": 65
+      },
+      "ng_calorific_value": {
+        "iqr": 45,
+        "z_score": 0,
+        "combined": 45
+      },
+      "catalyst_age_days": {
+        "iqr": 767,
+        "z_score": 767,
+        "combined": 767
+      },
+      "sec_gcal_per_mt": {
+        "iqr": 36,
+        "z_score": 26,
+        "combined": 36
+      }
+    },
+    "method": "IQR(x1.5) + ModifiedZ(>3.5)"
+  },
+  "nan_before": {
+    "steam_carbon_ratio": 23,
+    "loop_pressure": 25,
+    "reformer_outlet_temp": 20,
+    "cw_inlet_temp": 21,
+    "ambient_temp": 23,
+    "ambient_humidity": 31,
+    "co2_slip_ppm": 26,
+    "ng_calorific_value": 25,
+    "catalyst_age_days": 26,
+    "sec_gcal_per_mt": 21
+  },
+  "nan_after": {
+    "steam_carbon_ratio": 0,
+    "loop_pressure": 0,
+    "reformer_outlet_temp": 0,
+    "cw_inlet_temp": 0,
+    "ambient_temp": 0,
+    "ambient_humidity": 0,
+    "co2_slip_ppm": 0,
+    "ng_calorific_value": 0,
+    "catalyst_age_days": 0,
+    "sec_gcal_per_mt": 0
+  },
+  "turnaround_gaps_detected": {
+    "gadepan_1": 1,
+    "gadepan_2": 1,
+    "gadepan_3": 1
+  },
+  "turnaround_details": {
+    "gadepan_1": [
+      {
+        "restart_timestamp": "2026-04-30T00:00:00",
+        "hours_offline": 601.0,
+        "days_offline": 25.0
+      }
+    ],
+    "gadepan_2": [
+      {
+        "restart_timestamp": "2026-05-30T00:00:00",
+        "hours_offline": 601.0,
+        "days_offline": 25.0
+      }
+    ],
+    "gadepan_3": [
+      {
+        "restart_timestamp": "2026-03-25T00:00:00",
+        "hours_offline": 481.0,
+        "days_offline": 20.0
+      }
+    ]
+  },
+  "cross_plant_signal_validation": {
+    "ambient_temp": {
+      "avg_correlation": 0.9988,
+      "pairs": [
+        {
+          "pair": "gadepan_1-gadepan_2",
+          "r": 0.9988
+        },
+        {
+          "pair": "gadepan_1-gadepan_3",
+          "r": 0.9987
+        },
+        {
+          "pair": "gadepan_2-gadepan_3",
+          "r": 0.9989
+        }
+      ],
+      "status": "OK"
+    },
+    "ambient_humidity": {
+      "avg_correlation": 0.9888,
+      "pairs": [
+        {
+          "pair": "gadepan_1-gadepan_2",
+          "r": 0.9881
+        },
+        {
+          "pair": "gadepan_1-gadepan_3",
+          "r": 0.9885
+        },
+        {
+          "pair": "gadepan_2-gadepan_3",
+          "r": 0.9898
+        }
+      ],
+      "status": "OK"
+    },
+    "ng_calorific_value": {
+      "avg_correlation": 0.9954,
+      "pairs": [
+        {
+          "pair": "gadepan_1-gadepan_2",
+          "r": 0.9951
+        },
+        {
+          "pair": "gadepan_1-gadepan_3",
+          "r": 0.9956
+        },
+        {
+          "pair": "gadepan_2-gadepan_3",
+          "r": 0.9956
+        }
+      ],
+      "status": "OK"
+    }
+  },
+  "data_quality": {
+    "mean_score": 99.13,
+    "min_score": 69.9,
+    "max_score": 100.0,
+    "rows_below_80": 59,
+    "rows_below_50": 0,
+    "score_percentiles": {
+      "p5": 94.9,
+      "p25": 99.9,
+      "p50": 99.9,
+      "p75": 100.0,
+      "p95": 100.0
+    }
+  },
+  "processed_records": 11352,
+  "processed_columns": [
+    "timestamp",
+    "plant_id",
+    "steam_carbon_ratio",
+    "loop_pressure",
+    "reformer_outlet_temp",
+    "cw_inlet_temp",
+    "ambient_temp",
+    "ambient_humidity",
+    "co2_slip_ppm",
+    "ng_calorific_value",
+    "catalyst_age_days",
+    "shift",
+    "sec_gcal_per_mt",
+    "outlier_count",
+    "is_outlier",
+    "outlier_features",
+    "is_turnaround_gap",
+    "days_since_restart",
+    "hours_offline",
+    "is_post_ta_rampup",
+    "signal_agreement_score",
+    "shift_afternoon",
+    "shift_morning",
+    "shift_night",
+    "plant_gadepan_1",
+    "plant_gadepan_2",
+    "plant_gadepan_3",
+    "hour",
+    "day_of_week",
+    "month",
+    "day_of_year",
+    "is_weekend",
+    "is_peak_heat",
+    "is_night_shift",
+    "hour_sin",
+    "hour_cos",
+    "month_sin",
+    "month_cos",
+    "dow_sin",
+    "dow_cos",
+    "data_quality_score"
+  ],
+  "features_added": [
+    "outlier_count",
+    "is_outlier",
+    "outlier_features",
+    "is_turnaround_gap",
+    "days_since_restart",
+    "hours_offline",
+    "is_post_ta_rampup",
+    "signal_agreement_score",
+    "shift_afternoon",
+    "shift_morning",
+    "shift_night",
+    "plant_gadepan_1",
+    "plant_gadepan_2",
+    "plant_gadepan_3",
+    "hour",
+    "day_of_week",
+    "month",
+    "day_of_year",
+    "is_weekend",
+    "is_peak_heat",
+    "is_night_shift",
+    "hour_sin",
+    "hour_cos",
+    "month_sin",
+    "month_cos",
+    "dow_sin",
+    "dow_cos",
+    "data_quality_score"
+  ],
+  "processing_timestamp": "2026-10-20T06:13:06.882307"
+}

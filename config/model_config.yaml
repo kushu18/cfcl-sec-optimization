@@ -1,0 +1,110 @@
+# Model Training Configuration
+# SEC Optimization Engine — CFCL Gadepan
+
+training:
+  test_size: 0.2
+  validation_strategy: "walk_forward"
+  walk_forward:
+    n_splits: 5
+    gap: 24  # 24-hour gap between train/test to prevent leakage
+  random_state: 42
+  target_column: "sec_gcal_per_mt"
+
+models:
+  xgboost:
+    enabled: true
+    params:
+      n_estimators: 600
+      max_depth: 7
+      learning_rate: 0.03
+      subsample: 0.85
+      colsample_bytree: 0.85
+      min_child_weight: 3
+      reg_alpha: 0.1
+      reg_lambda: 1.0
+      early_stopping_rounds: 50
+      eval_metric: "rmse"
+    expected_r2: 0.91
+
+  lstm:
+    enabled: true
+    params:
+      sequence_length: 24  # 24-hour lookback
+      hidden_units: 64
+      num_layers: 2
+      dropout: 0.2
+      batch_size: 32
+      epochs: 100
+      learning_rate: 0.001
+      patience: 15  # Early stopping
+    expected_r2: 0.88
+
+  random_forest:
+    enabled: true
+    params:
+      n_estimators: 300
+      max_depth: 10
+      min_samples_split: 5
+      min_samples_leaf: 2
+      max_features: "sqrt"
+      n_jobs: -1
+    expected_r2: 0.87
+
+  linear_baseline:
+    enabled: true
+    params:
+      fit_intercept: true
+      normalize: false
+    expected_r2: 0.72
+
+evaluation:
+  metrics:
+    - r2_score
+    - mean_absolute_error
+    - root_mean_squared_error
+    - mean_absolute_percentage_error
+  comparison_plot: true
+  save_predictions: true
+
+shap:
+  enabled: true
+  explainer_type: "tree"  # TreeExplainer for XGBoost/RF
+  max_display_features: 10
+  plots:
+    - beeswarm
+    - waterfall
+    - dependence
+    - bar
+  save_format: "png"
+  dpi: 150
+
+optimizer:
+  method: "SLSQP"  # scipy.optimize method
+  max_iterations: 1000
+  tolerance: 1.0e-6
+  respect_safety_bounds: true
+
+drift_detection:
+  test: "kolmogorov_smirnov"
+  significance_level: 0.05
+  min_samples: 168  # 1 week of hourly data
+  severity_thresholds:
+    low: 1      # 1 feature drifted
+    moderate: 2  # 2 features drifted
+    high: 3      # 3+ features → model unreliable
+
+reporting:
+  format: "pdf"
+  output_dir: "outputs/reports"
+  include_sections:
+    - executive_summary
+    - shap_analysis
+    - optimization_recommendations
+    - data_quality
+
+paths:
+  raw_data: "data/raw"
+  processed_data: "data/processed"
+  models: "outputs/models"
+  figures: "outputs/figures"
+  reports: "outputs/reports"

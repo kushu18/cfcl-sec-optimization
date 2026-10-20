@@ -1,0 +1,179 @@
+{
+  "evaluation_timestamp": "2026-10-20T06:38:11.412755",
+  "holdout_records": 2270,
+  "holdout_start": "2026-05-30 11:00:00",
+  "holdout_end": "2026-06-30 23:00:00",
+  "champion_model": "Random_Forest",
+  "champion_metrics": {
+    "r2_score": 0.9613,
+    "mae": 0.0147,
+    "rmse": 0.0196,
+    "mape": 0.2879,
+    "max_error": 0.28,
+    "explained_variance": 0.9613,
+    "durbin_watson": 1.7894,
+    "residual_std": 0.0196,
+    "prediction_interval_95": 0.0383,
+    "within_1pct_dcs_band": 99.07,
+    "within_2pct_dcs_band": 99.91,
+    "heteroscedasticity_corr": 0.0771,
+    "within_plant": {
+      "gadepan_1": {
+        "r2": 0.8594,
+        "rmse": 0.0193,
+        "mae": 0.0153,
+        "mape": 0.2954
+      },
+      "gadepan_2": {
+        "r2": 0.8328,
+        "rmse": 0.0196,
+        "mae": 0.0154,
+        "mape": 0.301
+      },
+      "gadepan_3": {
+        "r2": 0.8349,
+        "rmse": 0.0198,
+        "mae": 0.0133,
+        "mape": 0.2673
+      }
+    }
+  },
+  "models": {
+    "Linear_Baseline": {
+      "r2_score": 0.9531,
+      "mae": 0.015,
+      "rmse": 0.0215,
+      "mape": 0.2941,
+      "max_error": 0.4061,
+      "explained_variance": 0.9532,
+      "durbin_watson": 2.0383,
+      "residual_std": 0.0215,
+      "prediction_interval_95": 0.0422,
+      "within_1pct_dcs_band": 98.55,
+      "within_2pct_dcs_band": 99.82,
+      "heteroscedasticity_corr": 0.0227,
+      "within_plant": {
+        "gadepan_1": {
+          "r2": 0.8557,
+          "rmse": 0.0196,
+          "mae": 0.015,
+          "mape": 0.2907
+        },
+        "gadepan_2": {
+          "r2": 0.8342,
+          "rmse": 0.0195,
+          "mae": 0.0147,
+          "mape": 0.2872
+        },
+        "gadepan_3": {
+          "r2": 0.7356,
+          "rmse": 0.0251,
+          "mae": 0.0152,
+          "mape": 0.3044
+        }
+      }
+    },
+    "Random_Forest": {
+      "r2_score": 0.9613,
+      "mae": 0.0147,
+      "rmse": 0.0196,
+      "mape": 0.2879,
+      "max_error": 0.28,
+      "explained_variance": 0.9613,
+      "durbin_watson": 1.7894,
+      "residual_std": 0.0196,
+      "prediction_interval_95": 0.0383,
+      "within_1pct_dcs_band": 99.07,
+      "within_2pct_dcs_band": 99.91,
+      "heteroscedasticity_corr": 0.0771,
+      "within_plant": {
+        "gadepan_1": {
+          "r2": 0.8594,
+          "rmse": 0.0193,
+          "mae": 0.0153,
+          "mape": 0.2954
+        },
+        "gadepan_2": {
+          "r2": 0.8328,
+          "rmse": 0.0196,
+          "mae": 0.0154,
+          "mape": 0.301
+        },
+        "gadepan_3": {
+          "r2": 0.8349,
+          "rmse": 0.0198,
+          "mae": 0.0133,
+          "mape": 0.2673
+        }
+      }
+    },
+    "XGBoost": {
+      "r2_score": 0.8803,
+      "mae": 0.0248,
+      "rmse": 0.0344,
+      "mape": 0.4856,
+      "max_error": 0.4179,
+      "explained_variance": 0.8808,
+      "durbin_watson": 2.0051,
+      "residual_std": 0.0344,
+      "prediction_interval_95": 0.0673,
+      "within_1pct_dcs_band": 89.91,
+      "within_2pct_dcs_band": 98.85,
+      "heteroscedasticity_corr": 0.3101,
+      "within_plant": {
+        "gadepan_1": {
+          "r2": 0.5783,
+          "rmse": 0.0335,
+          "mae": 0.0259,
+          "mape": 0.5
+        },
+        "gadepan_2": {
+          "r2": 0.3206,
+          "rmse": 0.0394,
+          "mae": 0.0286,
+          "mape": 0.5571
+        },
+        "gadepan_3": {
+          "r2": 0.6291,
+          "rmse": 0.0297,
+          "mae": 0.0199,
+          "mape": 0.3998
+        }
+      }
+    },
+    "LSTM": {
+      "r2_score": 0.903,
+      "mae": 0.0228,
+      "rmse": 0.031,
+      "mape": 0.4474,
+      "max_error": 0.4342,
+      "explained_variance": 0.9198,
+      "durbin_watson": 1.4614,
+      "residual_std": 0.0282,
+      "prediction_interval_95": 0.0552,
+      "within_1pct_dcs_band": 93.0,
+      "within_2pct_dcs_band": 99.82,
+      "heteroscedasticity_corr": 0.0699,
+      "within_plant": {
+        "gadepan_1": {
+          "r2": 0.6502,
+          "rmse": 0.0305,
+          "mae": 0.0248,
+          "mape": 0.4784
+        },
+        "gadepan_2": {
+          "r2": 0.5847,
+          "rmse": 0.0308,
+          "mae": 0.0246,
+          "mape": 0.4794
+        },
+        "gadepan_3": {
+          "r2": 0.5793,
+          "rmse": 0.0316,
+          "mae": 0.0192,
+          "mape": 0.3846
+        }
+      }
+    }
+  }
+}

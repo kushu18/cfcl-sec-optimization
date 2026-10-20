@@ -1,0 +1,252 @@
+{
+  "model_type": "random_forest",
+  "permutation_importance": {
+    "model_type": "random_forest",
+    "sample_records": 800,
+    "n_repeats": 5,
+    "top_features": [
+      {
+        "rank": 1,
+        "feature": "co2_slip_ppm_ewma_24h",
+        "importance_mean": 0.00502,
+        "importance_std": 0.00028
+      },
+      {
+        "rank": 2,
+        "feature": "sec_lag_1h",
+        "importance_mean": 0.00468,
+        "importance_std": 0.00017
+      },
+      {
+        "rank": 3,
+        "feature": "shift_night",
+        "importance_mean": 0.00372,
+        "importance_std": 0.00017
+      },
+      {
+        "rank": 4,
+        "feature": "co2_slip_ppm_rolling_mean_24h",
+        "importance_mean": 0.00305,
+        "importance_std": 0.00017
+      },
+      {
+        "rank": 5,
+        "feature": "sec_lag_24h",
+        "importance_mean": 0.00301,
+        "importance_std": 0.00013
+      },
+      {
+        "rank": 6,
+        "feature": "is_night_shift",
+        "importance_mean": 0.00292,
+        "importance_std": 0.00016
+      },
+      {
+        "rank": 7,
+        "feature": "regime_night_ops",
+        "importance_mean": 0.0027,
+        "importance_std": 0.00015
+      },
+      {
+        "rank": 8,
+        "feature": "sec_vs_fleet_mean",
+        "importance_mean": 0.00255,
+        "importance_std": 0.00012
+      },
+      {
+        "rank": 9,
+        "feature": "plant_gadepan_3",
+        "importance_mean": 0.00251,
+        "importance_std": 0.0002
+      },
+      {
+        "rank": 10,
+        "feature": "co2_slip_ppm_rolling_mean_12h",
+        "importance_mean": 0.00195,
+        "importance_std": 0.00011
+      },
+      {
+        "rank": 11,
+        "feature": "sec_lag_3h",
+        "importance_mean": 0.00186,
+        "importance_std": 0.00015
+      },
+      {
+        "rank": 12,
+        "feature": "sec_fleet_zscore",
+        "importance_mean": 0.00176,
+        "importance_std": 6e-05
+      },
+      {
+        "rank": 13,
+        "feature": "co2_slip_ppm_ewma_12h",
+        "importance_mean": 0.00155,
+        "importance_std": 9e-05
+      },
+      {
+        "rank": 14,
+        "feature": "co2_slip_ppm_ewma_6h",
+        "importance_mean": 0.00149,
+        "importance_std": 9e-05
+      },
+      {
+        "rank": 15,
+        "feature": "co2_slip_ppm_rolling_mean_6h",
+        "importance_mean": 0.00147,
+        "importance_std": 8e-05
+      },
+      {
+        "rank": 16,
+        "feature": "co2_slip_ppm_rolling_mean_3h",
+        "importance_mean": 0.00139,
+        "importance_std": 9e-05
+      },
+      {
+        "rank": 17,
+        "feature": "co2_slip_ppm",
+        "importance_mean": 0.00137,
+        "importance_std": 8e-05
+      },
+      {
+        "rank": 18,
+        "feature": "hour_cos",
+        "importance_mean": 0.00132,
+        "importance_std": 0.0001
+      },
+      {
+        "rank": 19,
+        "feature": "co2_efficiency",
+        "importance_mean": 0.00107,
+        "importance_std": 8e-05
+      },
+      {
+        "rank": 20,
+        "feature": "sec_lag_12h",
+        "importance_mean": 0.00091,
+        "importance_std": 6e-05
+      },
+      {
+        "rank": 21,
+        "feature": "sec_lag_6h",
+        "importance_mean": 0.0009,
+        "importance_std": 0.00012
+      },
+      {
+        "rank": 22,
+        "feature": "hour",
+        "importance_mean": 0.00078,
+        "importance_std": 5e-05
+      },
+      {
+        "rank": 23,
+        "feature": "steam_pressure_interaction",
+        "importance_mean": 0.00075,
+        "importance_std": 6e-05
+      },
+      {
+        "rank": 24,
+        "feature": "ambient_cw_interaction",
+        "importance_mean": 0.00072,
+        "importance_std": 5e-05
+      },
+      {
+        "rank": 25,
+        "feature": "cw_inlet_temp",
+        "importance_mean": 0.00069,
+        "importance_std": 5e-05
+      }
+    ]
+  },
+  "process_variable_elasticity": [
+    {
+      "variable": "steam_carbon_ratio",
+      "category": "Manipulated (Controllable)",
+      "step_change": "+0.1 ratio",
+      "mean_value": 3.11,
+      "delta_sec_gcal_per_mt": 0.00087,
+      "percent_sec_impact": 0.0171,
+      "elasticity_coefficient": 0.0053,
+      "operational_guidance": "Increasing steam_carbon_ratio by 0.1 ratio increases plant SEC by 0.0009 Gcal/MT"
+    },
+    {
+      "variable": "reformer_outlet_temp",
+      "category": "Manipulated (Controllable)",
+      "step_change": "+5.0 \u00b0C",
+      "mean_value": 808.21,
+      "delta_sec_gcal_per_mt": -0.0002,
+      "percent_sec_impact": -0.0039,
+      "elasticity_coefficient": -0.0063,
+      "operational_guidance": "Increasing reformer_outlet_temp by 5.0 \u00b0C reduces plant SEC by 0.0002 Gcal/MT"
+    },
+    {
+      "variable": "loop_pressure",
+      "category": "Manipulated (Controllable)",
+      "step_change": "+2.0 bar",
+      "mean_value": 162.02,
+      "delta_sec_gcal_per_mt": 0.00013,
+      "percent_sec_impact": 0.0025,
+      "elasticity_coefficient": 0.0021,
+      "operational_guidance": "Increasing loop_pressure by 2.0 bar increases plant SEC by 0.0001 Gcal/MT"
+    },
+    {
+      "variable": "ambient_temp",
+      "category": "Disturbance (Ambient/Feed)",
+      "step_change": "+2.0 \u00b0C",
+      "mean_value": 38.16,
+      "delta_sec_gcal_per_mt": 0.00078,
+      "percent_sec_impact": 0.0154,
+      "elasticity_coefficient": 0.0029,
+      "operational_guidance": "Increasing ambient_temp by 2.0 \u00b0C increases plant SEC by 0.0008 Gcal/MT"
+    },
+    {
+      "variable": "cw_inlet_temp",
+      "category": "Disturbance (Ambient/Feed)",
+      "step_change": "+1.0 \u00b0C",
+      "mean_value": 31.29,
+      "delta_sec_gcal_per_mt": 0.00086,
+      "percent_sec_impact": 0.017,
+      "elasticity_coefficient": 0.0053,
+      "operational_guidance": "Increasing cw_inlet_temp by 1.0 \u00b0C increases plant SEC by 0.0009 Gcal/MT"
+    },
+    {
+      "variable": "ng_calorific_value",
+      "category": "Disturbance (Ambient/Feed)",
+      "step_change": "+50.0 kcal/Sm\u00b3",
+      "mean_value": 8778.86,
+      "delta_sec_gcal_per_mt": -0.00026,
+      "percent_sec_impact": -0.005,
+      "elasticity_coefficient": -0.0088,
+      "operational_guidance": "Increasing ng_calorific_value by 50.0 kcal/Sm\u00b3 reduces plant SEC by 0.0003 Gcal/MT"
+    },
+    {
+      "variable": "ambient_humidity",
+      "category": "Disturbance (Ambient/Feed)",
+      "step_change": "+5.0 %",
+      "mean_value": 41.05,
+      "delta_sec_gcal_per_mt": 4e-05,
+      "percent_sec_impact": 0.0007,
+      "elasticity_coefficient": 0.0001,
+      "operational_guidance": "Increasing ambient_humidity by 5.0 % increases plant SEC by 0.0000 Gcal/MT"
+    },
+    {
+      "variable": "co2_slip_ppm",
+      "category": "Disturbance (Ambient/Feed)",
+      "step_change": "+100.0 ppm",
+      "mean_value": 934.38,
+      "delta_sec_gcal_per_mt": 0.00049,
+      "percent_sec_impact": 0.0096,
+      "elasticity_coefficient": 0.0009,
+      "operational_guidance": "Increasing co2_slip_ppm by 100.0 ppm increases plant SEC by 0.0005 Gcal/MT"
+    },
+    {
+      "variable": "catalyst_age_days",
+      "category": "Disturbance (Ambient/Feed)",
+      "step_change": "+30.0 days",
+      "mean_value": 47.86,
+      "delta_sec_gcal_per_mt": 0.00037,
+      "percent_sec_impact": 0.0073,
+      "elasticity_coefficient": 0.0001,
+      "operational_guidance": "Increasing catalyst_age_days by 30.0 days increases plant SEC by 0.0004 Gcal/MT"
+    }
+  ]
+}

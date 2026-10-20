@@ -1,0 +1,61 @@
+{
+  "assessment_timestamp": "2026-10-20T07:10:27.783069",
+  "optimized_telemetry_hours": 90,
+  "gas_tariff": {
+    "usd_per_mmbtu": 11.5,
+    "exchange_rate_inr_usd": 83.5,
+    "inr_per_gcal": 3810.58,
+    "inr_per_scm": 32.77
+  },
+  "fleet_summary": {
+    "combined_capacity_mtpd": 5390.0,
+    "total_annual_production_mt": 1802200.0,
+    "mean_sec_reduction_gcal_per_mt": 0.00069,
+    "total_annual_savings_crore_inr": 0.473,
+    "total_annual_gas_saved_million_scm": 0.144,
+    "total_annual_co2_abated_tco2": 69.3,
+    "total_equivalent_passenger_vehicles": 15,
+    "total_equivalent_trees_planted": 3150
+  },
+  "plants": {
+    "gadepan_1": {
+      "plant_id": "gadepan_1",
+      "annual_production_mt": 501600.0,
+      "delta_sec_gcal_per_mt": 0.0008,
+      "savings_per_mt_inr": 3.04,
+      "annual_savings_crore_inr": 0.152,
+      "annual_savings_inr": 1522738.0,
+      "annual_gas_saved_million_scm": 0.046,
+      "annual_energy_saved_mmbtu": 1585.8,
+      "annual_co2_abated_tco2": 22.3,
+      "equivalent_passenger_vehicles": 4,
+      "equivalent_trees_planted": 1013
+    },
+    "gadepan_2": {
+      "plant_id": "gadepan_2",
+      "annual_production_mt": 501600.0,
+      "delta_sec_gcal_per_mt": 0.00055,
+      "savings_per_mt_inr": 2.11,
+      "annual_savings_crore_inr": 0.106,
+      "annual_savings_inr": 1057634.0,
+      "annual_gas_saved_million_scm": 0.032,
+      "annual_energy_saved_mmbtu": 1101.4,
+      "annual_co2_abated_tco2": 15.5,
+      "equivalent_passenger_vehicles": 3,
+      "equivalent_trees_planted": 703
+    },
+    "gadepan_3": {
+      "plant_id": "gadepan_3",
+      "annual_production_mt": 799000.0,
+      "delta_sec_gcal_per_mt": 0.00071,
+      "savings_per_mt_inr": 2.69,
+      "annual_savings_crore_inr": 0.215,
+      "annual_savings_inr": 2151555.0,
+      "annual_gas_saved_million_scm": 0.066,
+      "annual_energy_saved_mmbtu": 2240.6,
+      "annual_co2_abated_tco2": 31.5,
+      "equivalent_passenger_vehicles": 6,
+      "equivalent_trees_planted": 1432
+    }
+  }
+}

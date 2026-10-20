@@ -1,0 +1,122 @@
+{
+  "monitoring_timestamp": "2026-10-20T07:50:32.039746",
+  "overall_severity": "HIGH_SEVERITY_CRITICAL",
+  "significance_level": 0.05,
+  "monitored_tags_count": 10,
+  "drifted_tags_count": 10,
+  "drifted_tags": [
+    "steam_carbon_ratio",
+    "reformer_outlet_temp",
+    "loop_pressure",
+    "ambient_temp",
+    "ambient_humidity",
+    "cw_inlet_temp",
+    "ng_calorific_value",
+    "co2_slip_ppm",
+    "catalyst_age_days",
+    "sec_gcal_per_mt"
+  ],
+  "recommended_dcs_action": "Severe multi-variable distribution shift detected (Summer heatwave / catalyst aging). Trigger automated ML model retraining and update steady-state optimization baseline.",
+  "feature_diagnostics": [
+    {
+      "feature_name": "steam_carbon_ratio",
+      "ks_statistic": 0.0808,
+      "p_value": 0.0,
+      "is_drifted": true,
+      "baseline_mean": 3.11,
+      "monitoring_mean": 3.1,
+      "percentage_mean_shift": -0.29,
+      "severity_flag": "CRITICAL_DRIFT"
+    },
+    {
+      "feature_name": "reformer_outlet_temp",
+      "ks_statistic": 0.126,
+      "p_value": 0.0,
+      "is_drifted": true,
+      "baseline_mean": 807.24,
+      "monitoring_mean": 808.33,
+      "percentage_mean_shift": 0.14,
+      "severity_flag": "CRITICAL_DRIFT"
+    },
+    {
+      "feature_name": "loop_pressure",
+      "ks_statistic": 0.0612,
+      "p_value": 0.0,
+      "is_drifted": true,
+      "baseline_mean": 163.36,
+      "monitoring_mean": 162.69,
+      "percentage_mean_shift": -0.41,
+      "severity_flag": "CRITICAL_DRIFT"
+    },
+    {
+      "feature_name": "ambient_temp",
+      "ks_statistic": 0.7289,
+      "p_value": 0.0,
+      "is_drifted": true,
+      "baseline_mean": 19.7,
+      "monitoring_mean": 34.54,
+      "percentage_mean_shift": 75.39,
+      "severity_flag": "CRITICAL_DRIFT"
+    },
+    {
+      "feature_name": "ambient_humidity",
+      "ks_statistic": 0.4392,
+      "p_value": 0.0,
+      "is_drifted": true,
+      "baseline_mean": 27.74,
+      "monitoring_mean": 25.03,
+      "percentage_mean_shift": -9.8,
+      "severity_flag": "CRITICAL_DRIFT"
+    },
+    {
+      "feature_name": "cw_inlet_temp",
+      "ks_statistic": 0.7019,
+      "p_value": 0.0,
+      "is_drifted": true,
+      "baseline_mean": 24.91,
+      "monitoring_mean": 29.92,
+      "percentage_mean_shift": 20.1,
+      "severity_flag": "CRITICAL_DRIFT"
+    },
+    {
+      "feature_name": "ng_calorific_value",
+      "ks_statistic": 0.0622,
+      "p_value": 0.0,
+      "is_drifted": true,
+      "baseline_mean": 8756.59,
+      "monitoring_mean": 8773.79,
+      "percentage_mean_shift": 0.2,
+      "severity_flag": "CRITICAL_DRIFT"
+    },
+    {
+      "feature_name": "co2_slip_ppm",
+      "ks_statistic": 0.0439,
+      "p_value": 9.1e-05,
+      "is_drifted": true,
+      "baseline_mean": 924.9,
+      "monitoring_mean": 924.57,
+      "percentage_mean_shift": -0.04,
+      "severity_flag": "CRITICAL_DRIFT"
+    },
+    {
+      "feature_name": "catalyst_age_days",
+      "ks_statistic": 0.6242,
+      "p_value": 0.0,
+      "is_drifted": true,
+      "baseline_mean": 276.71,
+      "monitoring_mean": 141.51,
+      "percentage_mean_shift": -48.86,
+      "severity_flag": "CRITICAL_DRIFT"
+    },
+    {
+      "feature_name": "sec_gcal_per_mt",
+      "ks_statistic": 0.182,
+      "p_value": 0.0,
+      "is_drifted": true,
+      "baseline_mean": 5.04,
+      "monitoring_mean": 5.07,
+      "percentage_mean_shift": 0.61,
+      "severity_flag": "CRITICAL_DRIFT"
+    }
+  ]
+}

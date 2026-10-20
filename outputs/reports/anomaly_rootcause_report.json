@@ -1,0 +1,423 @@
+{
+  "detection_timestamp": "2026-10-20T07:50:12.635943",
+  "total_excursion_hours": 188,
+  "severity_breakdown": {
+    "mild_2sigma": 157,
+    "severe_3sigma": 31
+  },
+  "failure_mode_breakdown": {
+    "Multi-Variable Plant Startup / Load Transient": 188
+  },
+  "plant_breakdown": {
+    "gadepan_1": 59,
+    "gadepan_3": 70,
+    "gadepan_2": 59
+  },
+  "recent_incidents": [
+    {
+      "timestamp": "2026-06-27 23:00:00",
+      "plant_id": "gadepan_1",
+      "actual_sec": 5.2701,
+      "expected_sec": 5.2582,
+      "z_score": 2.28,
+      "severity": "Mild (2\u03c3)",
+      "failure_mode": "Multi-Variable Plant Startup / Load Transient",
+      "top_contributors": [
+        {
+          "feature": "sec_lag_1h",
+          "shap_impact": 0.012,
+          "measured_value": 5.27
+        },
+        {
+          "feature": "sec_lag_24h",
+          "shap_impact": 0.011,
+          "measured_value": 5.3
+        },
+        {
+          "feature": "shift_night",
+          "shap_impact": 0.0099,
+          "measured_value": 1.0
+        }
+      ],
+      "operator_guidance": "Coupled process perturbation across steam balance, synthesis loop recirculation, and ambient diurnal shift."
+    },
+    {
+      "timestamp": "2026-06-28 00:00:00",
+      "plant_id": "gadepan_3",
+      "actual_sec": 5.053,
+      "expected_sec": 5.0417,
+      "z_score": 2.2,
+      "severity": "Mild (2\u03c3)",
+      "failure_mode": "Multi-Variable Plant Startup / Load Transient",
+      "top_contributors": [
+        {
+          "feature": "shift_night",
+          "shap_impact": 0.0083,
+          "measured_value": 1.0
+        },
+        {
+          "feature": "regime_night_ops",
+          "shap_impact": 0.0075,
+          "measured_value": 1.0
+        },
+        {
+          "feature": "is_night_shift",
+          "shap_impact": 0.0074,
+          "measured_value": 1.0
+        }
+      ],
+      "operator_guidance": "Coupled process perturbation across steam balance, synthesis loop recirculation, and ambient diurnal shift."
+    },
+    {
+      "timestamp": "2026-06-28 00:00:00",
+      "plant_id": "gadepan_1",
+      "actual_sec": 5.278,
+      "expected_sec": 5.2574,
+      "z_score": 2.42,
+      "severity": "Mild (2\u03c3)",
+      "failure_mode": "Multi-Variable Plant Startup / Load Transient",
+      "top_contributors": [
+        {
+          "feature": "sec_lag_1h",
+          "shap_impact": 0.0132,
+          "measured_value": 5.27
+        },
+        {
+          "feature": "sec_lag_24h",
+          "shap_impact": 0.0103,
+          "measured_value": 5.26
+        },
+        {
+          "feature": "shift_night",
+          "shap_impact": 0.0093,
+          "measured_value": 1.0
+        }
+      ],
+      "operator_guidance": "Coupled process perturbation across steam balance, synthesis loop recirculation, and ambient diurnal shift."
+    },
+    {
+      "timestamp": "2026-06-28 01:00:00",
+      "plant_id": "gadepan_1",
+      "actual_sec": 5.2617,
+      "expected_sec": 5.2547,
+      "z_score": 2.13,
+      "severity": "Mild (2\u03c3)",
+      "failure_mode": "Multi-Variable Plant Startup / Load Transient",
+      "top_contributors": [
+        {
+          "feature": "sec_lag_1h",
+          "shap_impact": 0.0136,
+          "measured_value": 5.28
+        },
+        {
+          "feature": "sec_lag_24h",
+          "shap_impact": 0.0104,
+          "measured_value": 5.24
+        },
+        {
+          "feature": "shift_night",
+          "shap_impact": 0.0094,
+          "measured_value": 1.0
+        }
+      ],
+      "operator_guidance": "Coupled process perturbation across steam balance, synthesis loop recirculation, and ambient diurnal shift."
+    },
+    {
+      "timestamp": "2026-06-28 02:00:00",
+      "plant_id": "gadepan_3",
+      "actual_sec": 5.0525,
+      "expected_sec": 5.0397,
+      "z_score": 2.19,
+      "severity": "Mild (2\u03c3)",
+      "failure_mode": "Multi-Variable Plant Startup / Load Transient",
+      "top_contributors": [
+        {
+          "feature": "shift_night",
+          "shap_impact": 0.0083,
+          "measured_value": 1.0
+        },
+        {
+          "feature": "regime_night_ops",
+          "shap_impact": 0.0075,
+          "measured_value": 1.0
+        },
+        {
+          "feature": "is_night_shift",
+          "shap_impact": 0.0075,
+          "measured_value": 1.0
+        }
+      ],
+      "operator_guidance": "Coupled process perturbation across steam balance, synthesis loop recirculation, and ambient diurnal shift."
+    },
+    {
+      "timestamp": "2026-06-28 02:00:00",
+      "plant_id": "gadepan_1",
+      "actual_sec": 5.2605,
+      "expected_sec": 5.2533,
+      "z_score": 2.11,
+      "severity": "Mild (2\u03c3)",
+      "failure_mode": "Multi-Variable Plant Startup / Load Transient",
+      "top_contributors": [
+        {
+          "feature": "sec_lag_1h",
+          "shap_impact": 0.0132,
+          "measured_value": 5.26
+        },
+        {
+          "feature": "sec_lag_24h",
+          "shap_impact": 0.0106,
+          "measured_value": 5.24
+        },
+        {
+          "feature": "shift_night",
+          "shap_impact": 0.0094,
+          "measured_value": 1.0
+        }
+      ],
+      "operator_guidance": "Coupled process perturbation across steam balance, synthesis loop recirculation, and ambient diurnal shift."
+    },
+    {
+      "timestamp": "2026-06-28 03:00:00",
+      "plant_id": "gadepan_1",
+      "actual_sec": 5.2541,
+      "expected_sec": 5.2515,
+      "z_score": 2.0,
+      "severity": "Mild (2\u03c3)",
+      "failure_mode": "Multi-Variable Plant Startup / Load Transient",
+      "top_contributors": [
+        {
+          "feature": "sec_lag_1h",
+          "shap_impact": 0.0137,
+          "measured_value": 5.26
+        },
+        {
+          "feature": "sec_lag_24h",
+          "shap_impact": 0.0107,
+          "measured_value": 5.26
+        },
+        {
+          "feature": "shift_night",
+          "shap_impact": 0.0101,
+          "measured_value": 1.0
+        }
+      ],
+      "operator_guidance": "Coupled process perturbation across steam balance, synthesis loop recirculation, and ambient diurnal shift."
+    },
+    {
+      "timestamp": "2026-06-28 04:00:00",
+      "plant_id": "gadepan_3",
+      "actual_sec": 5.0477,
+      "expected_sec": 5.037,
+      "z_score": 2.1,
+      "severity": "Mild (2\u03c3)",
+      "failure_mode": "Multi-Variable Plant Startup / Load Transient",
+      "top_contributors": [
+        {
+          "feature": "shift_night",
+          "shap_impact": 0.0089,
+          "measured_value": 1.0
+        },
+        {
+          "feature": "regime_night_ops",
+          "shap_impact": 0.0084,
+          "measured_value": 1.0
+        },
+        {
+          "feature": "is_night_shift",
+          "shap_impact": 0.0081,
+          "measured_value": 1.0
+        }
+      ],
+      "operator_guidance": "Coupled process perturbation across steam balance, synthesis loop recirculation, and ambient diurnal shift."
+    },
+    {
+      "timestamp": "2026-06-28 04:00:00",
+      "plant_id": "gadepan_1",
+      "actual_sec": 5.2767,
+      "expected_sec": 5.2596,
+      "z_score": 2.39,
+      "severity": "Mild (2\u03c3)",
+      "failure_mode": "Multi-Variable Plant Startup / Load Transient",
+      "top_contributors": [
+        {
+          "feature": "sec_lag_1h",
+          "shap_impact": 0.0138,
+          "measured_value": 5.25
+        },
+        {
+          "feature": "sec_lag_24h",
+          "shap_impact": 0.0108,
+          "measured_value": 5.25
+        },
+        {
+          "feature": "shift_night",
+          "shap_impact": 0.0105,
+          "measured_value": 1.0
+        }
+      ],
+      "operator_guidance": "Coupled process perturbation across steam balance, synthesis loop recirculation, and ambient diurnal shift."
+    },
+    {
+      "timestamp": "2026-06-28 05:00:00",
+      "plant_id": "gadepan_1",
+      "actual_sec": 5.2903,
+      "expected_sec": 5.2605,
+      "z_score": 2.63,
+      "severity": "Mild (2\u03c3)",
+      "failure_mode": "Multi-Variable Plant Startup / Load Transient",
+      "top_contributors": [
+        {
+          "feature": "sec_lag_1h",
+          "shap_impact": 0.0145,
+          "measured_value": 5.28
+        },
+        {
+          "feature": "sec_lag_24h",
+          "shap_impact": 0.0112,
+          "measured_value": 5.27
+        },
+        {
+          "feature": "shift_night",
+          "shap_impact": 0.011,
+          "measured_value": 1.0
+        }
+      ],
+      "operator_guidance": "Coupled process perturbation across steam balance, synthesis loop recirculation, and ambient diurnal shift."
+    },
+    {
+      "timestamp": "2026-06-28 22:00:00",
+      "plant_id": "gadepan_1",
+      "actual_sec": 5.255,
+      "expected_sec": 5.2353,
+      "z_score": 2.02,
+      "severity": "Mild (2\u03c3)",
+      "failure_mode": "Multi-Variable Plant Startup / Load Transient",
+      "top_contributors": [
+        {
+          "feature": "sec_lag_24h",
+          "shap_impact": 0.0105,
+          "measured_value": 5.27
+        },
+        {
+          "feature": "shift_night",
+          "shap_impact": 0.0103,
+          "measured_value": 1.0
+        },
+        {
+          "feature": "is_night_shift",
+          "shap_impact": 0.009,
+          "measured_value": 1.0
+        }
+      ],
+      "operator_guidance": "Coupled process perturbation across steam balance, synthesis loop recirculation, and ambient diurnal shift."
+    },
+    {
+      "timestamp": "2026-06-28 23:00:00",
+      "plant_id": "gadepan_1",
+      "actual_sec": 5.2611,
+      "expected_sec": 5.2385,
+      "z_score": 2.12,
+      "severity": "Mild (2\u03c3)",
+      "failure_mode": "Multi-Variable Plant Startup / Load Transient",
+      "top_contributors": [
+        {
+          "feature": "sec_lag_1h",
+          "shap_impact": 0.0111,
+          "measured_value": 5.25
+        },
+        {
+          "feature": "sec_lag_24h",
+          "shap_impact": 0.0106,
+          "measured_value": 5.27
+        },
+        {
+          "feature": "shift_night",
+          "shap_impact": 0.0101,
+          "measured_value": 1.0
+        }
+      ],
+      "operator_guidance": "Coupled process perturbation across steam balance, synthesis loop recirculation, and ambient diurnal shift."
+    },
+    {
+      "timestamp": "2026-06-29 04:00:00",
+      "plant_id": "gadepan_1",
+      "actual_sec": 5.2747,
+      "expected_sec": 5.2319,
+      "z_score": 2.36,
+      "severity": "Mild (2\u03c3)",
+      "failure_mode": "Multi-Variable Plant Startup / Load Transient",
+      "top_contributors": [
+        {
+          "feature": "sec_lag_1h",
+          "shap_impact": 0.0124,
+          "measured_value": 5.23
+        },
+        {
+          "feature": "shift_night",
+          "shap_impact": 0.0103,
+          "measured_value": 1.0
+        },
+        {
+          "feature": "sec_lag_24h",
+          "shap_impact": 0.0102,
+          "measured_value": 5.28
+        }
+      ],
+      "operator_guidance": "Coupled process perturbation across steam balance, synthesis loop recirculation, and ambient diurnal shift."
+    },
+    {
+      "timestamp": "2026-06-30 00:00:00",
+      "plant_id": "gadepan_1",
+      "actual_sec": 5.2557,
+      "expected_sec": 5.2223,
+      "z_score": 2.03,
+      "severity": "Mild (2\u03c3)",
+      "failure_mode": "Multi-Variable Plant Startup / Load Transient",
+      "top_contributors": [
+        {
+          "feature": "sec_lag_1h",
+          "shap_impact": 0.0114,
+          "measured_value": 5.24
+        },
+        {
+          "feature": "shift_night",
+          "shap_impact": 0.0096,
+          "measured_value": 1.0
+        },
+        {
+          "feature": "sec_lag_24h",
+          "shap_impact": 0.0086,
+          "measured_value": 5.19
+        }
+      ],
+      "operator_guidance": "Coupled process perturbation across steam balance, synthesis loop recirculation, and ambient diurnal shift."
+    },
+    {
+      "timestamp": "2026-06-30 22:00:00",
+      "plant_id": "gadepan_3",
+      "actual_sec": 5.0823,
+      "expected_sec": 5.0414,
+      "z_score": 2.74,
+      "severity": "Mild (2\u03c3)",
+      "failure_mode": "Multi-Variable Plant Startup / Load Transient",
+      "top_contributors": [
+        {
+          "feature": "shift_night",
+          "shap_impact": 0.0106,
+          "measured_value": 1.0
+        },
+        {
+          "feature": "is_night_shift",
+          "shap_impact": 0.0091,
+          "measured_value": 1.0
+        },
+        {
+          "feature": "regime_night_ops",
+          "shap_impact": 0.009,
+          "measured_value": 1.0
+        }
+      ],
+      "operator_guidance": "Coupled process perturbation across steam balance, synthesis loop recirculation, and ambient diurnal shift."
+    }
+  ]
+}

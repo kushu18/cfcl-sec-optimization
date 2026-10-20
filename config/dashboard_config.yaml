@@ -1,0 +1,50 @@
+# Streamlit Dashboard Configuration
+# SEC Optimization Engine — CFCL Gadepan
+
+app:
+  title: "SEC Optimization Engine — CFCL Gadepan"
+  page_icon: "🏭"
+  layout: "wide"
+  initial_sidebar_state: "expanded"
+
+theme:
+  primary_color: "#1B4F72"      # CFCL corporate blue
+  secondary_color: "#2E86C1"
+  accent_color: "#E74C3C"       # Alert/anomaly red
+  success_color: "#27AE60"      # Within-target green
+  warning_color: "#F39C12"      # Warning amber
+  background_color: "#FAFAFA"
+  text_color: "#2C3E50"
+  font_family: "Inter, sans-serif"
+
+plots:
+  default_height: 400
+  default_width: 800
+  color_palette:
+    gadepan_1: "#E74C3C"  # Red
+    gadepan_2: "#3498DB"  # Blue
+    gadepan_3: "#2ECC71"  # Green
+  benchmark_line_color: "#95A5A6"
+  anomaly_marker_color: "#E74C3C"
+  grid_style: "--"
+  grid_alpha: 0.3
+
+pages:
+  sec_tracker:
+    title: "📈 SEC Tracker"
+    description: "Real-time SEC vs predicted vs benchmark with anomaly bands"
+    refresh_interval: 60  # seconds
+  shap_explorer:
+    title: "🔍 SHAP Explorer"
+    description: "Interactive SHAP waterfall + beeswarm + dependence plots"
+  shift_scorecard:
+    title: "📊 Shift Scorecard"
+    description: "Operator shift performance comparison (anonymized)"
+  what_if_simulator:
+    title: "🎯 What-If Simulator"
+    description: "Slider-based setpoint optimizer with live SEC prediction"
+
+sidebar:
+  plant_selector: true
+  date_range_picker: true
+  shift_filter: true

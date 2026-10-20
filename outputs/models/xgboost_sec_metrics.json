@@ -1,0 +1,68 @@
+{
+  "metrics": {
+    "val_r2": 0.8803,
+    "val_mae": 0.0248,
+    "val_rmse": 0.0344,
+    "val_mape": 0.4856,
+    "best_iteration": 83
+  },
+  "cv_results": [
+    {
+      "fold": 1,
+      "r2": 0.8688,
+      "mae": 0.0229,
+      "rmse": 0.036,
+      "mape": 0.4511,
+      "best_iteration": 186
+    },
+    {
+      "fold": 2,
+      "r2": 0.3665,
+      "mae": 0.0487,
+      "rmse": 0.0695,
+      "mape": 0.9604,
+      "best_iteration": 447
+    },
+    {
+      "fold": 3,
+      "r2": 0.604,
+      "mae": 0.054,
+      "rmse": 0.0747,
+      "mape": 1.0826,
+      "best_iteration": 326
+    },
+    {
+      "fold": 4,
+      "r2": 0.909,
+      "mae": 0.0216,
+      "rmse": 0.0329,
+      "mape": 0.4245,
+      "best_iteration": 122
+    },
+    {
+      "fold": 5,
+      "r2": 0.9142,
+      "mae": 0.0211,
+      "rmse": 0.0295,
+      "mape": 0.4132,
+      "best_iteration": 121
+    }
+  ],
+  "top_15_features": {
+    "plant_gadepan_3": 0.79978,
+    "co2_slip_ppm_rolling_mean_3h": 0.03202,
+    "co2_slip_ppm_rolling_mean_6h": 0.0291,
+    "regime_heat_stress": 0.02074,
+    "regime_night_ops": 0.02051,
+    "sec_lag_24h": 0.01512,
+    "co2_slip_ppm_ewma_24h": 0.00877,
+    "sec_lag_1h": 0.00802,
+    "shift_night": 0.00594,
+    "is_night_shift": 0.0046,
+    "hour_sin": 0.00291,
+    "co2_efficiency": 0.0028,
+    "is_outlier": 0.00271,
+    "outlier_count": 0.00217,
+    "ambient_cw_interaction": 0.0018
+  }
+}
